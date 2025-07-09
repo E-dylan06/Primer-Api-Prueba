@@ -13,7 +13,7 @@ function list(tabla) {
 function selectById(tabla, id) {
   return new Promise((resolve, reject) => {
     const conexion = getConnection(); // Obtener la conexión
-    conexion.query(`SELECT * FROM ${tabla} WHERE id = ${id}`, (error, result) => {
+    conexion.query(`SELECT * FROM ${tabla} WHERE product_id = ${id}`, (error, result) => {
       return error ? reject(error) : resolve(result);
     });
   });
@@ -33,7 +33,7 @@ function add(tabla, data) {
 function deleteById(tabla, id) {
   return new Promise((resolve, reject) => {
     const conexion = getConnection(); // Obtener la conexión
-    conexion.query(`DELETE FROM ${tabla} WHERE id = ${id}`, (error, result) => {
+    conexion.query(`DELETE FROM ${tabla} WHERE product_id = ${id}`, (error, result) => {
       return error ? reject(error) : resolve(result);
     });
   });
